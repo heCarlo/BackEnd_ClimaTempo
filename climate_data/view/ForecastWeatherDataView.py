@@ -1,11 +1,11 @@
 from rest_framework import viewsets
 from rest_framework.response import Response
 from ..models.forecast_weather_data import ForecastWeatherDataEntity
-from ..serializer.forecastWeatherDataSerializer import ForecastWeatherDataEntitySerializer
+from ..serializer.forecastWeatherDataSerializer import ForecastWeatherDataSerializer
 
 class ForecastWeatherDataEntityViewSet(viewsets.ModelViewSet):
     queryset = ForecastWeatherDataEntity.objects.all()
-    serializer_class = ForecastWeatherDataEntitySerializer
+    serializer_class = ForecastWeatherDataSerializer
 
     def list(self, request, *args, **kwargs):
         forecasts = self.queryset
